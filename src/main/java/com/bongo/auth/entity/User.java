@@ -1,14 +1,14 @@
 package com.bongo.auth.entity;
 
-import jakarta.annotation.Generated;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NonNull;
 
 @Entity
 @Data
@@ -21,10 +21,10 @@ public class User {
     private Long id;
 
     @Column(name = "login")
-    @NonNull
+    @NotBlank
     private String login;
 
     @Column(name = "password")
-    @NonNull
+    @NotBlank
     private String password;
 }

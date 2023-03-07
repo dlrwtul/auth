@@ -15,14 +15,13 @@ import com.auth0.jwt.exceptions.JWTVerificationException;
 import lombok.extern.log4j.Log4j2;
 
 
-@Service
 @Log4j2
+@Service
 public class JwtService {
 
     private static final Duration JWT_TOKEN_VALIDITY = Duration.ofMinutes(20);
 
     private final Algorithm hmac512;
-    
     private final JWTVerifier verifier;
 
     public JwtService(@Value("${jwt.secret}") final String secret) {
